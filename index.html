@@ -1,112 +1,106 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Suprise...!</title>
     <style>
         body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 0;
-}
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            background-color: #f9f4f5;
+            /* Soft pastel color for the background */
+        }
 
-.container {
-    padding: 20px;
-}
+        .container {
+            padding: 30px;
+        }
 
-h1 {
-    margin-bottom: 20px;
-}
+        h1 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #e91e63;
+            /* Romantic color for the heading */
+        }
 
-.buttons {
-    margin: 20px;
-}
+        .buttons {
+            margin: 20px;
+        }
 
-button {
-    font-size: 18px;
-    padding: 10px 20px;
-    margin: 5px;
-}
+        button {
+            font-size: 20px;
+            padding: 12px 24px;
+            margin: 10px;
+            border: none;
+            border-radius: 20px;
+            background-color: #ff4081;
+            /* Romantic color for the buttons */
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
 
-.popup {
-    display: none;
-    background-color: #f9f9f9;
-    border: 1px solid #ccc;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 999;
-}
-body {
-    font-family: 'Great Vibes', cursive;
-    text-align: center;
-    margin: 0;
-    background-color: #f9f4f5; /* Soft pastel color for the background */
-}
+        button:hover {
+            background-color: #ff5c8d;
+            /* Lighter shade on hover for a soft effect */
+        }
 
-.container {
-    padding: 30px;
-}
+        .popup {
+            display: none;
+            background-color: #fff;
+            border: 1px solid #e91e63;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 999;
+            font-family: 'Dancing Script', cursive;
+            font-size: 24px;
+            color: #e91e63;
+        }
 
-h1 {
-    font-size: 36px;
-    margin-bottom: 30px;
-    color: #e91e63; /* Romantic color for the heading */
-}
+        .popup.fade-in {
+            animation: fadeIn 0.3s ease;
+        }
 
-.buttons {
-    margin: 20px;
-}
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
 
-button {
-    font-size: 20px;
-    padding: 12px 24px;
-    margin: 10px;
-    border: none;
-    border-radius: 20px;
-    background-color: #ff4081; /* Romantic color for the buttons */
-    color: #fff;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
+            to {
+                opacity: 1;
+            }
+        }
 
-button:hover {
-    background-color: #ff5c8d; /* Lighter shade on hover for a soft effect */
-}
+        .instagram-link {
+            margin-top: 60px;
+        }
 
-.popup {
-    display: none;
-    background-color: #fff;
-    border: 1px solid #e91e63; /* Romantic color for the border */
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 999;
-    font-family: 'Dancing Script', cursive;
-    font-size: 24px;
-    color: #e91e63; /* Romantic color for the popup text */
-}
+        .instagram-link a {
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #e91e63;
+            font-size: 18px;
+            font-family: Arial, sans-serif;
+        }
 
-/* Add a smooth fade-in animation for the popup */
-.popup.fade-in {
-    animation: fadeIn 0.3s ease;
-}
+        .instagram-link img {
+            width: 40px;
+            height: 40px;
+        }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
+        .instagram-link a:hover {
+            color: #ff5c8d;
+        }
     </style>
-
-    
 </head>
+
 <body>
     <div class="container">
         <h1>Will you come on a date with me?</h1>
@@ -117,30 +111,37 @@ button:hover {
         <div class="popup" id="popup">
             <p>Aww, thank you!😍</p>
         </div>
+
+        <!-- Instagram Link -->
+        <div class="instagram-link">
+            <a href="https://www.instagram.com/your_username/" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+                Follow me on Instagram
+            </a>
+        </div>
     </div>
+
     <script>
         const noButton = document.getElementById("no-btn");
-const yesButton = document.getElementById("yes-btn");
-const popup = document.getElementById("popup");
+        const yesButton = document.getElementById("yes-btn");
+        const popup = document.getElementById("popup");
 
-noButton.addEventListener("mouseover", () => {
-    noButton.style.position = "absolute";
-    noButton.style.left = Math.random() * 80 + "vw";
-    noButton.style.top = Math.random() * 80 + "vh";
-});
+        noButton.addEventListener("mouseover", () => {
+            noButton.style.position = "absolute";
+            noButton.style.left = Math.random() * 80 + "vw";
+            noButton.style.top = Math.random() * 80 + "vh";
+        });
 
-yesButton.addEventListener("click", () => {
-    popup.style.display = "block";
-});
+        yesButton.addEventListener("click", () => {
+            popup.style.display = "block";
+        });
 
-popup.addEventListener("click", () => {
-    popup.style.display = "none";
-});
+        popup.addEventListener("click", () => {
+            popup.style.display = "none";
+        });
 
-// Hide the popup initially
-popup.style.display = "none";
+        popup.style.display = "none";
     </script>
-
-
 </body>
+
 </html>
